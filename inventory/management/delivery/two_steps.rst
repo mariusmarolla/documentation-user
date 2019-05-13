@@ -1,55 +1,51 @@
-==========================================================
-How to process delivery orders in two steps (pick + ship)?
-==========================================================
+============================================================================
+Come processare gli ordini di consegna in due steps (prelievo + spedizione)?
+============================================================================
 
-Overview
-========
+Panoramica
+==========
 
-When an order goes to the shipping department for final delivery, Odoo
-is set up by default to utilize a **one-step** operation: once all goods are
-available, they are able to be shipped in a single delivery order.
-However, your company's business process may have one or more steps that
-happen before shipping. In the **two steps** process, the items in a delivery
-order are **picked** in the warehouse and brought to an **output location** for
-**shipping**. The goods are then shipped.
+Quando un ordine viene mandato al reparto spedizioni, la configurazione di default di
+Zelo consiste nell'utilizzo di uno step: quando tutti i prodotti sono pronti e
+disponibili possono essere spediti in un'unico ordine di consegna.
+Tuttavia, il processo di gestione del magazzino e delle consegne della tua azienda potrebbe 
+necessitare di più step prima della spedizione. 
+Nel processo con **due step** i prodotti di un ordine vengono prima **raggruppati in una location per l'uscita** e 
+successivamente vengono **spediti**.
 
-In order to accomplish a **Pick + Ship** delivery in Odoo, there are a few 
-necessary configuration steps. These steps create an additional
-location, which by default is called **Output**. So, if your warehouse's
-code is ``WH``, this configuration will create a location called
-``WH/Output``. Goods will move from ``WH/Stock`` to ``WH/Output`` in the first
-step (picking). Then, they move from ``WH/Output`` to ``WH/Customers`` (in the
-case of sales orders) in the second step (shipping).
+Per utilizzare il sistema a due fasi ci sono poche passaggi di configurazione necessari.
+Tali passaggi creeranno una location aggiuntiva chiamata **Output** per cui se il tuo
+magazzino è identificato con **WH** verrà creata la location **WH/Output**.
+Le merci si sposteranno da *WH/Stock* a *WH/Output* nel primo step e poi da quest'ultimo a 
+*WH/Customers*, nel caso degli ordini di vendita, nel secondo step.
 
 .. note::
-    Check out :doc:`inventory_flow` to determine if this inventory flow is the
-    correct method for your needs.
+    Consulta :doc:`inventory_flow` per determinare se questo sistema è il metodo giusto per soddisfare
+    le esigenze della tua attività.
 
-Configuration
-=============
+Configurazione
+==============
 
-Allow management of routes
---------------------------
+Consentire la gestione dei percorsi
+------------------------------------
+Zelo configura e gestisce gli ordini di consegna tramite i **Percorsi**. 
+Questi consistono in meccanismi per concatenare le varie azioni.
+In questo caso, vogliamo legare la fase di prelievo dei prodotti alla fase 
+di spedizione degli stessi.
 
-Odoo configures movement of delivery orders via the **routes**. Routes
-provide a mechanism to chain different actions together. In this case,
-we will chain the picking step to the shipping step.
+Per poter gestire i percorsi vai in :menuselection:`Magazzino --> Configurazione --> impostazioni`.
 
-To allow management of routes, go to :menuselection:`Configuration --> Settings`.
-
-Ensure that the radio button **Advanced routing of products using
-rules** is checked.
+Abilita l'opzione **Percorsi Multi-Passaggio**.
 
 .. image:: media/two_steps05.png
    :align: center
 
-Click on **Apply** at the top of the page to save changes (if you needed to
-check the radio button above).
+Premi il pulsante **Salva** in alto a sinistra per tenere le modifiche alla nuova
+configurazione.
 
 .. note::
-    If you checked option **Advanced routing of products using rules**
-    you may need to activate **Manage several locations per warehouse** if it
-    wasn't activated beforehand.
+    Nel caso l'opzione **Location Magazzino** non fosse stata precedentemente abilitata
+    noterai che verrà automaticamente spuntata insieme a quella relativa ai percorsi.
 
 Configure warehouse for Pick + Ship
 ------------------------------------
