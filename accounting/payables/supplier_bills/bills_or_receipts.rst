@@ -27,43 +27,32 @@ Facciamo il seguente esempio: dobbiamo acquistare del tè per i nostri clienti d
 un negozio locale che però non emette fatture. Ogni settimana acquistiamo 50€ di tè
 e una teiera da 20€. Paghiamo utilizzando il conto bancario della nostra azienda.
 
-Configuration
-=============
+Configurazione
+==============
 
-To handle purchase receipts in Odoo one module and one app has to be
-installed. Go into the app module and install the accounting app.
+Non vi sono particolari configurazioni o impostazioni da applicare. Tutti gli
+strumenti necessari dovrebbero essere già stati installati.
 
-.. image:: ./media/bill01.png
-  :align: center
+Registrare una ricevuta
+=======================
 
-Then, go in the search bar, delete the default module search, and search
-for "purchase". Install the **Sale & Purchase Vouchers** module.
+Per importare la nostra ricevuta di 50€ per il te acquistato, dalla Contabilità
+seleziona :menuselection:`Acquisti --> Ricevute d'Acquisto`.
 
-.. image:: ./media/bill02.png
-  :align: center
+Crea una nuova ricevuta e inserisci tutte le informazioni richieste.
+Nota che, per il campo **Pagamento** hai la possibilità di scegliere tra
+**Paga Adesso** e **Paga più tardi**. La differenza è significativa, poichè
+con *Paga più tardi* il sistema generarerà una voce in un conto di debito,
+mentre il *Paga Adesso* utilizzerà solo il conto bancario.
 
-Register a receipt 
-===================
-
-By installing the **Sale & Purchase Vouchers** I've made the new
-**Purchase Receipts** drop down menu visible in the accounting app.
-
-To import our 50 euros worth of tea purchase receipt, enter the
-accounting app, select :menuselection:`Purchases --> Purchase Receipts`.
-
-Create a new Purchase Receipt and fill in all the necessary information.
-Note that you have the choice in the Payment field between **Pay Later**
-or **Pay Now**. It's a significant difference as Pay Later will generate
-a debt accounting entry whereas Pay Now will immediately credit the Bank
-account.
-
-In most cases you immediately pay, we will thus select the Pay Directly
-option. Add the products, the related account and the appropriate taxe.
-For the example we suppose the tea is a 12% taxe and the Tea Pott 21%.
+Nella maggior parte dei casi, il pagamento sarà immediato, e quindi selezioniamo
+la voce *Paga Adesso*. Aggiungi il prodotto, il relativo conto e l'imposta.
+Per questo esempio supponiamo che il te abbia un'imposta del 10% e la teiera del 22%.
 
 .. image:: ./media/bill03.png
   :align: center
 
+Valida la Ricevuta d'Acquisto per registrarla. Ricorda che devi
 Validate the Purchase Receipt to post it. Don't forget you need to
-:doc:`reconcile payments <../../bank/reconciliation/use_cases>` in order to
-completely close the transaction in your accounting.
+:doc:`riconciliare i pagamenti <../../bank/reconciliation/use_cases>` 
+per chiudere completamente la transazione nella tua contabilità.
