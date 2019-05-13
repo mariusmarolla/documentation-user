@@ -47,21 +47,19 @@ configurazione.
     Nel caso l'opzione **Location Magazzino** non fosse stata precedentemente abilitata
     noterai che verrà automaticamente spuntata insieme a quella relativa ai percorsi.
 
-Configure warehouse for Pick + Ship
-------------------------------------
+Configurare il magazzino con due step
+-------------------------------------
+Per configurare il magazzino all'uso di due step vai in :menuselection:`Magazzino --> Configurazione --> Magazzini` 
+e modifica le impostazioni del magazzino che utilizzerai.
 
-To configure a **Pick + Ship** move, go to 
-:menuselection:`Configuration --> Warehouses` and edit
-the warehouse that will be used.
-
-For outgoing shippings, set the option to **Bring goods to output
-location before shipping (Pick + Ship)**
+In particolare seleziona l'opzione **Porta i Prodotti nell'area d'uscita prima della spedizione (Pick + Ship)** per
+quanto riguarda le *Spedizioni in Uscita*.
 
 .. image:: media/two_steps03.png
    :align: center
 
-Create a Sales Order
-====================
+Creare un Ordine di Vendita
+===========================
 
 Install the **Sale** if it is not the case, and 
 create a sales order with some products to deliver.
