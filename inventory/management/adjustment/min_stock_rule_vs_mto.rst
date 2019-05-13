@@ -1,71 +1,85 @@
-===========================================================
-How to choose between minimum stock rule and make to order?
-===========================================================
+=======================================================================
+Come scegliere tra le regole produzione su ordine e approvvigionamento?
+=======================================================================
 
-**Minimum Stock rules** and **Make to Order** have similar consequences but
-different rules. They should be used depending on your manufacturing and
-delivery strategies.
+Le regole **Produzione su ordine** e **regole di approvvigionamento** hanno conseguenze simili ma logiche differenti. 
+Dovrebbero essere opportunamente utilizzate a seconda delle tue logiche di produzione e consegna.
 
-Terminology
-===========
+Terminologia
+============
 
-Minimum stock rule 
--------------------
+Regole di approvvigionamento
+----------------------------
 
-**Minimum Stock** rules are used to ensure that you always have the minimum
-amount of a product in stock in order to manufacture your products
-and/or answer to your customer needs. When the stock level of a product
-reaches its minimum the system will automatically generate a procurement
-with the quantity needed to reach the maximum stock level.
+Le regole di approvvigionamento sono utilizzate per garantire la costante presenza di una minima quantità di prodotto 
+che ti permetta di fabbricare ciò che vendi e rispondere alle esigenze dei clienti.
+Nello specifico quando un prodotto raggiunge la quantità minima presente fissata, Zelo genera 
+automaticamente un ordine contenente la quantità necessaria a riportare la quantità presente al livello massimo fissato.
 
-Make to Order
--------------
+Produzione su ordine
+--------------------
 
-The **Make to Order** function will trigger a **Purchase Order** of the amount
-of the **Sales Order** related to the product. The system will **not** check
-the current stock valuation. This means that a draft purchase order will
-be generated regardless of the quantity on hand of the product.
+La funzione **Produzione su ordine** genera un ordine di acquisto dell’importo dell’ordine di vendita relativo al prodotto. 
+Non avviene alcun controllo sulla quantità attuale presente del prodotto. 
+Ciò significa che verrà generata una bozza d’ordine indipendentemente dalla quantità posseduta.
 
-Configuration
-=============
+Configurazione
+==============
 
-Minimum stock rules
--------------------
+Regole di approvvigionamento
+-----------------------------
 
-The Minimum Stock Rules configuration is available through the menu 
-:menuselection:`Inventory --> Inventory Control --> Reordering Rule`
-in the drop down menu. There, click on **Create** to set minimum and
-maximum stock values for a given product.
+Puoi configurare le regole di approvvigionamento in :menuselection:` Inventario --> Anagrafiche  Regole di Approvvigionamento`. 
+Qui fai clic su **Crea** per impostare i valori minimi e massimi di riferimento per uno specifico prodotto.
 
 .. image:: media/min_stock_rule_vs_mto01.png
    :align: center
 
 .. demo:fields:: stock.action_orderpoint_form
 
-Then, click on your product to access the related product form and, on
-the **Inventory submenu**, do not forget to select a supplier.
+   ---Lo smart buttom *Attivo* vi da la possibilità di archiviare quella regola, rendendola inattiva, senza cancellarla rendendola al
+   contenpo, dunque, recuperabile.
+   L'unità di misura è quella utilizzata di default per tutte le operazioni di magazzino.
+   Gruppo di approvvigionamento?---
+
+   ---La quantità minima indica la soglia al di sotto della quale parte la generazione automatica dell'ordine d'acquisto per
+   aumentare le scorte.
+   La quantità massima è il riferimento utilizzato da Zelo per indicare una quantità nell'ordine d'acquisto: il sistema infatti
+   tenderà a riportare la quantità disponibile alla quantità massima di riferimento indicata.
+   Il campo multiplo quantità rappresenta il riferimento per arrotondare la quantità inserita nell'ordine d'acquisto. Se il valore                          indicato è 0 allora verrà indicata la quantità esatta.
+   Infine il campo *tempi di consegna* può indicare il numero di giorni, dopo l'esecuzione della regola, necessari per ricevere i   prodotti o per confermare l'ordine al fornitore.---
+
+
+
+Poi, cerca e clicca sul prodotto per accedere alla sua scheda profilo e, nel tab **Magazzino**, ricordati di inserire un fornitore.
 
 .. image:: media/min_stock_rule_vs_mto02.png
    :align: center
 
 .. tip::
-    Don't forget to select the right product type in the product form. 
-    A consumable can not be stocked and will thus not be accounted for in the stock valuation.
+    Fai attenzione a selezionare la giusta tipologia di prodotto quando lo crei.
+    Zelo non tiene la consistenza di magazzino dei prodotti consumabili poichè vengono considerati sempre presenti
+    pertanto una regola di approvigionamento non funzionerebbe.
+    
 
-Make to Order 
---------------
+Produzione su ordine
+---------------------
 
-The Make to Order configuration is available on your product form
-through your :menuselection:`Inventory module --> Inventory control --> Products`
-(or any other module where products are available).
+Puoi configurare la regola di produzione su ordine all'interno della scheda profilo del 
+prodotto: :menuselection:`Magazzino --> Anagrafiche --> Prodotti` (o al limite accedendo ai prodotti da altre aree
+in cui è possibile farlo come ad esempio Vendite o Acquisti).
 
-On the product form, under **Inventory**, click on **Make To Order**.
+all'interno della scheda prodotto, nel tab **Magazzino**, seleziona l'opzione **Produzione su ordine** nella sezione *Percorsi approvvigionamento*
 
 .. image:: media/min_stock_rule_vs_mto03.png
    :align: center
 
-Choice between the two options
-------------------------------
+Scegliere tra le due opzioni
+----------------------------
+Quale opzione scegliere tra le due presentate dipende dalla vostra strategia di gestione del
+magazzino. Le regole di approvvigionamento sono utili qualora tu preferisca avere una scorta minima
+sempre presente mentre, al contrario, la produzione su ordine è utile qualora tu preferisca
+procurarti i prodotti necessari a soddisfare la richiesta del cliente solo quando la vendita è confermata.
 
 The choice between the two options is thus dependent of your inventory
 strategy. If you prefer to have a buffer and always have at least a
