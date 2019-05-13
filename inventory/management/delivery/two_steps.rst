@@ -60,65 +60,54 @@ quanto riguarda le *Spedizioni in Uscita*.
 
 Creare un Ordine di Vendita
 ===========================
+Crea un preventivo con inseriti diversi prodotti da spedire. Conferma il preventivo trasformandolo in un ordine di vendita.
 
-Install the **Sale** if it is not the case, and 
-create a sales order with some products to deliver.
-
-Notice that we now see ``2`` transfers associated with this sales order
-in the **Delivery** stat button above the sales order.
+Vedrai apparire a questo punto uno smart buttom Consegna in alto a destra che ti indica la presenza di due trasferimenti associata all'ordine.
 
 .. image:: media/two_steps01.png
    :align: center
 
-If you click on the **2 Transfers** stat button, you should now see two
-different pickings, one with a reference **PICK** to designate the
-picking process and another with a reference **OUT** to designate the
-shipping process.
+Cliccandoci sopra verrai direttamente portato nel magazzino e vedrai due differenti trasferimenti 
+corrispondenti all'ordine: uno con riferimento **PICK** che fa riferimento al prelievo e raggruppamento merce e 
+**OUT** che fa riferimento alla spedizione.
 
 .. image:: media/two_steps04.png
    :align: center
 
-Process a Delivery
-==================
+Processare una consegna
+=======================
 
-How to Process the Picking Step?
---------------------------------
+Come processare lo step di picking o prelievo merce?
+-----------------------------------------------------
 
-Ensure that you have enough product in stock, and go to 
-**Inventory** and click on the **Waiting** link under the **Pick** kanban card.
+Recupera il movimento di magazzino **PICK** associato all'ordine di vendita. 
+Per farlo puoi utilizzare lo smart buttom Consegna nell'ordine (come visto sopra) o andare in **Magazzino** e cliccare sul pulsante **# Trasferimenti** sotto **Pick** kanban card e cercare il movimento nella lista.
 
 .. image:: media/two_steps06.png
    :align: center
 
-Click on the picking that you want to process.
+In entrambi i casi entra nel movimento di magazzino.
 
-Click on **Reserve** to reserve the products if they are available.
+(Click on **Reserve** to reserve the products if they are available.?)
 
-Click on **Validate** to complete the move from **WH/Stock** to **WH/Output**.
+Clicca su **Valida** per completare il movimento dei prodotti da **WH/Stock** a **WH/Output**.
 
-This has completed the picking step and the **WH/PICK** move should now show
-**Done** in the status column at the top of the page. The product has
-been moved from **WH/Stock** to **WH/Output** location, which makes the product
-**available for the next step** (Shipping).
+In questo modo si è concluso lo step del prelievo (picking) e lo stato del movimento, che puoi vedere in alto a destra, dovrebbe essere **Fatto** per cui il prodotto risulta trasferito da **WH/Stock** a **WH/Output** ed è **pronto e disponibile per lo step successivo** ossia la spedizione.
 
-How to Process the Shipping Step?
----------------------------------
+Come processare lo step di spedizione o consegna?
+-------------------------------------------------
 
-Go to **Inventory** and click on the **# TO DO** link under the
-**Delivery Orders** kanban card.
+Recupera il movimento di magazzino **OUT** associato all'ordine di vendita. 
+Per farlo puoi utilizzare lo smart buttom Consegna nell'ordine (come visto sopra) o andare in **Magazzino** e cliccare sul pulsante **# DA FARE** sotto **Ordini di Consegna** kanban card e cercare il movimento nella lista.
 
 .. image:: media/two_steps02.png
    :align: center
 
-Click on the picking that you want to process.
+In entrambi i casi entra nel movimento di magazzino.
 
-Click on **Validate** to complete the move from **WH/Output** to the
-customer (Click **Apply** to assign the quantities based on the
-quantities listed in the **To Do** column)
+Clicca sul pulsante **Valida** per completare il movimento di evasione dell'ordine dal magazzino **WH/Output** al cliente.
 
-This has completed the shipping step and the **WH/OUT** move should now show
-**Done** in the status column at the top of the page. The product has
-been shipped to the customer.
+In questo modo si è concluso lo step di consegna e lo stato del movimento **WH/OUT**, che puoi vedere in alto a destra, dovrebbe essere **Fatto** per cui il prodotto risulta spedito al cliente.
 
 .. todo::
     link to these sections when they will be available
