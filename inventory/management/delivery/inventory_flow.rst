@@ -1,52 +1,45 @@
-=================================================================
-How to choose the right inventory flow to handle delivery orders?
-=================================================================
+==========================================================================================
+Come scegliere la miglior organizzazione del magazzino per gestire gli ordini di consegna? 
+==========================================================================================
 
-Depending on factors such as the type of items you sell, the size of
-your warehouse, the number of orders you register everyday... the way you
-handle deliveries to your customers can vary a lot.
+A seconda di fattori quali tipologia di articoli venduti, dimensioni del magazzino, numero di ordini 
+che arrivano in un giorno etc... il modo in cui gestire le consegne ai clienti può variare molto.
 
-Odoo allows you to handle shipping from your warehouse in 3 different
-ways:
+Zelo ti permette di gestire le spedizioni all'interno del tuo magazzino in tre differenti modi:
 
--  **One step (shipping)**: Ship directly from stock
+-  **Uno step (spedizione)**: spedire direttamente dal magazzino;
 
--  **Two steps (pick + ship)**: Bring goods to output location before
-   shipping
+-  **Due steps (scelta + spedizione)**: portare le merci alla location di uscita e poi spedirle;
 
--  **Three steps (pick + pack + ship)**: Make packages into a dedicated
-   location, then bring them to the output location for shipping
+-  **Tre steps (scelta + imballaggio + spedizione)**: effettuare l'imballaggio in una location dedicata
+   per poi portarli nel luogo di uscita e spedire;
 
-For companies having a rather small warehouse and that do not require
-high stock of items or don't sell perishable items, a one step shipping
-is the simplest solution, as it does not require a lot of configuration
-and allows to handle orders very quickly.
+Per le aziende che possiedono un magazzino abbastanza piccolo e non richiedono il possesso di un elevato numero
+di articoli o non vendono prodotti deperibili, un unico passaggio di evasione della merce è la soluzione più 
+semplice poichè richiede poche configurazioni e permette di gestire gli ordini rapidamente.
 
-Using inventory methods such as FIFO, LIFO and FEFO require to have at
-least two steps to handle a shipment. The picking method will be
-determined by the removal strategy, and the items removed will then be
-shipped to the customer. This method is also interesting if you hold
-larger stocks and especially when the items you stock are big in size.
+L'utilizzo di metodi di inventario quali FIFO, LIFO e FEFO richiedono la presenza di almeno due passaggi per
+gestire una spedizione. Il metodo di picking saràdeterminato dalla strategia di rimozione, e gli elementi rimossi 
+saranno quindi spediti al cliente. Questo metodo è interessante anche se si dispone di
+un grande magazzino e soprattutto quando gli articoli presenti sono di grandi dimensioni.
 
-The three steps system becomes useful in more specific situations, the
-main one being for handling very large stocks. The items are transferred
-to a packing area, where they will be assembled by area of destination,
-and then set to outbound trucks for final delivery to the customers.
+Il sistema a tre step diventa utile in situazioni più specifiche tra le quali la presenza di un 
+magazzino o più di rgandi dimensioni. I prodotti vengono trasferiti in un'area di imballaggio dove
+verranno raggruppati per area di destinazione e successivamente portati sui camion per la consegna finale.
 
-Configuration
-=============
+Configurazione
+==============
 
-One step flow
+Sistema ad uno step
 -------------
 
-Please read documentation on :doc:`one_step`
+Consulta l'apposita documentazione :doc:`one_step`
 
-Two steps flow
---------------
+Sistema a due step
+------------------
 
-Please read documentation on :doc:`two_steps`
+Consulta l'apposita documentazione :doc:`two_steps`
 
-Three steps flow
-----------------
-
-Please read documentation on :doc:`three_steps`
+Sistema a tre step
+------------------
+Consulta l'apposita documentazione :doc:`three_steps`
