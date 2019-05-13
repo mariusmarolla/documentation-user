@@ -1,30 +1,31 @@
-======================================================
-When should I use supplier bills or purchase receipts?
-======================================================
+=========================================
+Fatture d'acquisto o ricevute d'acquisto?
+=========================================
 
-Purchase receipts are different than vendor bills. Vendor bills are
-requests for payment. If I issue a Purchase Order my vendor will in most
-business cases send me a Vendor Bill. Depending on his invoice policy I
-then have a defined amount of time to pay the Bill. A Purchase receipts
-are confirmations of received payments. They are my day-to-day ticket
-receipts.
+Le ricevute d'acquisto sono diverse dalle fatture d'acquisto. Le fatture
+d'acquisto sono richieste di pagamento. Se confermo un ordine d'acquisto, nella
+maggior parte dei casi il mio fornitore emetterà un fattura. Dipendentemente
+poi dagli accordi con il fornitore, avrò a disposizione un certo periodo di
+tempo per pagare la fattura. Le ricevute d'acquisto, invece, sono conferme
+di avvenuti pagamenti.
 
-From an accounting point of view this makes a difference as a Vendor
-Bill will first credit a debt account before reconciling with the bank
-account. On the other hand we usually immediately pay the purchase
-receipts, which means no debt account is necessary.
+Dal punto di vista contabile c'è una differenza significativa, poichè una
+fattura d'acquisto andrà ad accreditare un conto di debito prima di riconciliare
+il pagamento con il conto bancario. Dall'altro lato, generalmente il pagamento
+di una ricevuta avviene nel momento esatto della sua emissione (il che significa
+che non è necessario valorizzare alcun conto di debito).
 
-Moreover purchase receipts can have a different tax amount per product
-line, as vendors bills apply one tax amount over the entire bill.
+Inoltre, le ricevute d'acquisto possono avere un importo di imposta diverso
+per ogni riga, mentre le fatture d'acquisto possono avere un solo importo di imposta
+per l'intero conto.
 
-If my company's bank account is used to pay for goods where only a
-purchase receipt are issued I should use the purchase receipts function
-in Odoo to handle them in accounting.
+Se utilizzo il conto bancario della mia azienda per pagare l'acquisto di prodotti
+per i quali è stata emessa solo una ricevuta, dovrò utilizzare proprio la ricevuta
+per gestire l'acquisto in contabilità.
 
-Let's take the following example: we need to buy tea for our
-customers from a local tea store that doesn't issue bills. We go every
-week buy 50 euros worth of tea and a teapot worth 20 euros. We pay with
-the company's bank account.
+Facciamo il seguente esempio: dobbiamo acquistare del tè per i nostri clienti da
+un negozio locale che però non emette fatture. Ogni settimana acquistiamo 50€ di tè
+e una teiera da 20€. Paghiamo utilizzando il conto bancario della nostra azienda.
 
 Configuration
 =============
