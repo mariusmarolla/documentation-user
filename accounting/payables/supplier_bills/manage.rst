@@ -155,65 +155,65 @@ Corrispondenza delle fatture d'acquisto
 Cosa fare se la fattura d'acquisto non corrisponde alle merci ricevute
 ----------------------------------------------------------------------
 
+Se la fattura d'acquisto ricevuta dal fornitore contiene quantità differenti
+da quelle utilizzate automaticamente da Zelo, probabilmente si verifica
+uno dei seguenti casi:
 
-If the bill you receive from the vendor has different quantities than
-what Odoo automatically populates as quantities, this could be due to
-several reasons:
+- il fornitore ti sta addebitando prodotti e/o servizi che non hai ordinato,
 
-- the vendor is incorrectly charging you for products and/or services
-  that you have not ordered,
+- il fornitore ti sta addebitando prodotti che non hai ancora ricevuto, poiché
+  il controllo di fatturazione può essere basato su quantità ordinate
+  o quantità ricevute,
+  
+- il fornitore non ti aveva addebitato prodotti acquistati precedentemente.
 
-- the vendor is billing you for products that you might not have
-  received yet, as the invoicing control may be based on ordered or
-  received quantities,
+In questi casi è importante verificare che la fattura, ed ogni ordine d'acquisto
+associato al fornitore, siano accurati e che tu abbia una visione chiara
+di cosa è stato ordinato e di cosa è già stato ricevuto.
 
-- or the vendor did not bill you for previously purchased products.
+Se non riesci a trovare un ordine d'acquisto relativo a una fattura d'acquisto,
+potrebbe verificarsi una delle seguenti situazioni:
 
-In these instances it is recommended that you verify that the bill, and
-any associated purchase order to the vendor, are accurate and that you
-understand what you have ordered and what you have already received.
+- il fornitore ha già emesso fattura per questo ordine d'acquisto,
+  pertanto l'ordine non compare più nella lista di quelli selezionabili,
 
-If you are unable to find a purchase order related to a vendor bill,
-this could be due to one of a few reasons:
+- qualcuno in azienda si è dimenticato di registrare un ordine d'acquisto
+  a questo fornitore,
 
-- the vendor has already invoiced you for this purchase order,
-  therefore it is not going to appear anywhere in the selection,
-
-- someone in the company forgot to record a purchase order for this
-  vendor,
-
-- or the vendor is charging you for something you did not order.
+- il fornitore ti sta addebitando prodotti o servizi che non hai ordinato.
 
 
+Gestire la quantità di prodotto
+-------------------------------
 
-How product quantities are managed
-----------------------------------
+Per impostazione predefinita, i servizi sono gestiti sulla base delle
+quantità ordinate, mentre i prodotti stoccabili consumabile sono
+gestiti sulla base delle quantità ricevute.
 
-By default, services are managed based on ordered quantities, while
-stockables and consumables are managed based on received quantities.
-
-If you need to manage products based on ordered quantities over received
-quantities, you will need to belong to the group **Purchase Manager**.
-Ask your system administrator to enable these access on :menuselection:`Settings
---> Users --> Users --> Access Rights`. Once you belong to the correct group,
-select the product(s) you wish to modify, and you should see a new field appear,
-labeled **Control Purchase Bills**.
+Se hai la necessità di gestire prodotti sulle quantità ordinate invece che
+ricevute, dovrai per prima cosa appartenere al gruppo **Manager** 
+degli Acquisti.
+Chiedi al tuo amministratore di sistema di abilitare questo tipo di accesso
+in :menuselection:`Impostazioni --> Utenti --> Utenti e Aziende --> Accessi Applicazioni`.
+Una volta stabilita la tua appartenenza al gruppo, seleziona il/i prodotti/i che
+vorresti modificare. Dovresti a questo punto vedere un nuovo campo
+**Controllo Fatture di Acquisto**.
 
 .. image:: ./media/manage08.png
   :align: center
 
-You can then change the default management method for the selected
-product to be based on either:
+Puoi ora modificare il metodo di gestione predefinito per il prodotto selezionato,
+scegliendo tra:
 
-- Ordered quantities
+- Quantità ordinate
 
-- or Received quantities
+- Quantità ricevute
 
-Batch Billing
--------------
+Gestire fatture d'acquisto per più ordini
+-----------------------------------------
 
-When creating a vendor bill and selecting the appropriate purchase
-order, you may continue to select additional purchase orders and Odoo
-will add the additional line items from that purchase order.. If you
-have not deleted the previous line items from the first purchase order
-the bill will be linked to all the appropriate purchase orders.
+Creando una fattura d'acquisto e selezionando l'ordine d'acquisto corrispondente,
+potrai continuare a selezionare ulteriori ordini d'acquisto. Zelo aggiungerà
+le nuove righe di prodotto da questi ordini d'acquisto. Se nel frattempo
+non hai eliminato la precedente riga proveniente del primo ordine d'acquisto,
+la fattura verrà collegata a tutti gli ordini d'acquisto selezionati.
