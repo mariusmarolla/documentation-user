@@ -62,14 +62,14 @@ Creare un Ordine di Vendita
 ===========================
 Crea un preventivo con inseriti diversi prodotti da spedire. Conferma il preventivo trasformandolo in un ordine di vendita.
 
-Vedrai apparire a questo punto uno smart buttom Consegna in alto a destra che ti indica la presenza di due trasferimenti associata all'ordine.
+Vedrai apparire a questo punto uno smart buttom **Consegna** in alto a destra che ti indica la presenza di **2** trasferimenti associata all'ordine.
 
 .. image:: media/two_steps01.png
    :align: center
 
 Cliccandoci sopra verrai direttamente portato nel magazzino e vedrai due differenti trasferimenti 
-corrispondenti all'ordine: uno con riferimento **PICK** che fa riferimento al prelievo e raggruppamento merce e 
-**OUT** che fa riferimento alla spedizione.
+corrispondenti all'ordine: uno con riferimento **PICK** che indica l'operazione di prelievo e raggruppamento merce e 
+**OUT** che indica l'operazione di spedizione.
 
 .. image:: media/two_steps04.png
    :align: center
