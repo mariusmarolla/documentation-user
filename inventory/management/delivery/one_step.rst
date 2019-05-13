@@ -1,63 +1,62 @@
-======================================================
-How to process delivery orders in one step (shipping)?
-======================================================
+=====================================================================
+Come elaborare gli ordini di consegna in un'unico step (spedizione)?
+=====================================================================
 
-Overview
-========
+Panoramica
+==========
 
-When an order goes to the shipping department for final delivery, Odoo
-is set up by default to utilize a one-step operation: once all goods are
-available, they are able to be shipped in a single delivery order.
+Quando un ordine di vendita arriva nel reparto spedizioni per la consegna finale, Zelo
+è impostato di default per utilizzare un'operazione che consiste un un'unica fase: quando tutte le
+merci sono pronte e disponibili queste possono essere spedite in un'unico ordine di consegna.
 
-Configuration
-=============
+Configurazione
+==============
+Non è necessaria alcuna configurazione. Le spedizioni in uscita sono configurate di default per essere
+consegnate direttamente in magazzino.
 
-There is no configuration needed. The default outgoing shipments are
-configured to be directly delivered from the stock.
+Tuttavia, se l'opzione **Percorsi multipassaggio** è stata abilitata ed è stata impostata un'altra configurazione per il tuo magazzino,
+puoi facilmente tornare al sistema ad uno step.
+Per farlo ti basterà andare in :menuselection:`Configurazione --> Magazzini` e modificare la configurazione del
+magazzino in questione.
 
-However, if **advance routes** is activated and you set another shipping
-configuration on your warehouse, you can set it back to the one-step
-delivery configuration. Go to :menuselection:`Configuration --> Warehouses` 
-and edit the concerned warehouse.
-
-Set the outgoing shippings the option to **Ship directly from stock
-(Ship Only)**
+Imposta **Spedizioni in uscita** sull'opzione **Spedisci direttamente i Prodotti dal Punto di Stoccaggio (Solo Spedizione)**.
 
 .. image:: media/one_step01.png
    :align: center
 
-Create a Sales Order
-====================
+Creare un ordine di vendita
+===========================
 
-Create a sales order (From quotation to sales order) with some products
-to deliver.
+Crea un preventivo con inseriti diversi prodotti da spedire.
+Conferma il preventivo trasformandolo in un ordine di vendita.
 
-Notice that we now see ``1`` delivery associated with this sales order
-in the **stat button** above the sales order.
+Vedrai apparire a questo punto uno smart buttom **Consegna** in alto a destra che ti
+indica la presenza di una consegna associata all'ordine.
 
 .. image:: media/one_step03.png
    :align: center
 
-If you click on the **1 Delivery** stat button, you should now see your
-picking.
+Cliccandoci sopra verrai direttamente portato nel movimento di magazzino corrispondente all'ordine.
 
-Process a Delivery
-==================
+Processare una consegna
+=======================
 
-Go to **Inventory** and click on the **# TO DO** link under the
-**Delivery Orders** kanban card.
+Recupera il movimento di magazzino associato all'ordine di vendita.
+Per farlo puoi utilizzare lo smart buttom **Consegna** nell'ordine (come visto sopra)
+o andare in **Magazzino** e cliccare sul pulsante **# DA FARE** sotto **Ordini di Consegna** kanban card
+e cercare il movimento nella lista.
 
 .. image:: media/one_step02.png
    :align: center
 
-Click on the picking that you want to process.
+in entrambi i casi entra nel movimento di magazzino.
 
-Click on **Validate** to complete the move from **WH/Output** to the
-**customer**.
+Clicca sul pulsante **Valida** per completare il movimento di evasione dell'ordine dal
+magazzino (WH/Output) al cliente.
 
-This has completed the **Shipping Step** and the WH/OUT should now show
-**Done** in the status column at the top of the page, which means the
-product has been shipped to the customer.
+In questo modo si è conclusa la spedizione in un step e lo stato del
+movimento, che puoi vedere in alto a destra, dovrebbe essere **Fatto** per cui
+il prodotto risulta spedito al cliente.
 
 
 .. todo::
